@@ -1,4 +1,4 @@
-export enum FoodCategories {
+export enum FOOD_CATEGORIES {
   BREAD = 'Bread',
   CHEESE = 'Cheese',
   MEAT = 'Meat',

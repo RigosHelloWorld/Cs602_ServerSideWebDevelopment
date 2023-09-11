@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf ./build ./node_modules",
-    "lint:fix":"prettier --config .prettierrc 'src/**/*.ts' --write",
+    "lint:fix": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "prepare": "npm run-script lint:fix && npm run-script build",
     "start": "npm run-script prepare && npx ts-node",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +18,8 @@
     "@types/node": "^20.6.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@inquirer/input": "^1.2.11"
   }
 }

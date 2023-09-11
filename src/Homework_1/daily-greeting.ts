@@ -5,7 +5,7 @@ class DailyGreeting {
   constructor() {}
 
   public getGreeting() {
-    //Based off the local time zone hours are inclusive: 0-23 
+    //Based off the local time zone hours are inclusive: 0-23
     const hour = new Date().getHours();
 
     if (hour > 0 && hour < 12) {

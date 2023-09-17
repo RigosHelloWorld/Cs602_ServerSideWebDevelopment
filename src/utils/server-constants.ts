@@ -14,6 +14,7 @@ const MESSAGE = {
   BABY_NAME_SAVED: 'Baby name saved successfully.',
   BABY_NAME_SAVE_ERROR: 'Baby name already saved.',
   INTERNAL_SERVER_ERROR: 'An unexpected error occured.',
+  NUMBER_GUESSING_BAD_REQUEST: 'Invalid request',
 };
 
 const ROUTES = {
@@ -23,6 +24,7 @@ const ROUTES = {
   BABY_NAME_DISCOVER_ROUTE: '/discover',
   BABY_NAME_LIST_ROUTE: '/list',
   BABY_NAME_SAVE_ROUTE: '/save',
+  NUMBER_GUESSING_GUESS_ROUTE: '/guess',
 };
 
 export { HTTP_STATUS_CODES, MESSAGE, ROUTES };

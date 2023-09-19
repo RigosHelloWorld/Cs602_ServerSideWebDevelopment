@@ -1,0 +1,47 @@
+/* styles.css */
+
+  /* Optional: Adjust styles for specific elements */
+  .baby-name-header {
+    /* Add your header styles here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* 100% of the viewport height */
+    text-align: center; /* Center text within the container */
+
+  }
+  
+  .baby-name-list {
+    /* Add your list item styles here */
+    /* These styles are specific to each list item */
+    list-style: none; /* Remove default bullet points */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    text-align: center;
+  }
+
+  
+  /* Style for the save button */
+/* CSS */
+
+.center-screen {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Optional: Style for the button */
+  .next-baby-name-group {
+    /* Add your button styles here */
+    padding: auto;
+    border: 1px solid #ccc;
+    margin: 5px;
+    text-align: center;
+    max-width: fit-content;
+  }
+  
+  
+  .save-button {
+    margin-top: 10px; /* Adjust as needed */
+  }

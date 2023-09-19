@@ -8,9 +8,17 @@ let babyNames: string[] = [];
 const deleteBabyName = async (req: Request, res: Response): Promise<any> => {
   const name = req.params.babyNameId;
 
+  console.log(typeof name);
+
+  if (typeof name !== 'string') {
+    return res.status(HTTP_STATUS_CODES.NOT_FOUND).send({
+      messages: 'Invalid baby name ID',
+    });
+  }
+
   if (!babyNames.includes(name)) {
-    res.status(HTTP_STATUS_CODES.NOT_FOUND).send({
-      messages: MESSAGE.BABY_NAMES_NOT_FOUND_NONE_SAVED,
+    return res.status(HTTP_STATUS_CODES.NOT_FOUND).send({
+      messages: "No baby name matched nothing deleted.",
     });
   }
 
@@ -28,6 +36,7 @@ const fetchNewBabyNames = async (_req: Request, res: Response): Promise<void> =>
         'X-Api-Key': process.env.BABY_NAME_API_KEY ?? '<YOUR_API_KEY>',
       },
     });
+
     res.send({
       message: response.data,
     });
@@ -44,33 +53,31 @@ const saveBabyName = async (req: Request, res: Response): Promise<any> => {
 
   if (!name) {
     return res.status(HTTP_STATUS_CODES.BAD_REQEST_RESPONSE).send({
-      message: MESSAGE.BABY_NAME_BAD_REQUEST,
+      error: MESSAGE.BABY_NAME_BAD_REQUEST,
     });
-  }
-
-  if (babyNames.includes(name)) {
+  } else if (babyNames.includes(name)) {
     return res.status(HTTP_STATUS_CODES.BAD_REQEST_RESPONSE).send({
-      message: MESSAGE.BABY_NAME_SAVE_ERROR,
+      error: MESSAGE.BABY_NAME_SAVE_ERROR,
+    });
+  } else {
+    babyNames.push(name);
+
+    return res.status(HTTP_STATUS_CODES.OK).send({
+      message: MESSAGE.BABY_NAME_SAVED,
     });
   }
-
-  babyNames.push(name);
-
-  res.status(HTTP_STATUS_CODES.OK).send({
-    message: MESSAGE.BABY_NAME_SAVED,
-  });
 };
 
 const getSavedCollectionOfBabyNames = async (_req: Request, res: Response): Promise<any> => {
   if (babyNames.length === 0) {
     return res.status(HTTP_STATUS_CODES.NOT_FOUND).send({
-      messages: MESSAGE.BABY_NAMES_NOT_FOUND_NONE_SAVED,
+      message: MESSAGE.BABY_NAMES_NOT_FOUND_NONE_SAVED,
     });
   }
 
   res.send({
-    messages: babyNames,
+    message: babyNames,
   });
 };
 
-export { deleteBabyName, fetchNewBabyNames, getSavedCollectionOfBabyNames, saveBabyName };
+export { deleteBabyName, fetchNewBabyNames as discoverNewBabyNames, getSavedCollectionOfBabyNames, saveBabyName };

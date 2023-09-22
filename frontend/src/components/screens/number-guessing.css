@@ -1,0 +1,26 @@
+.header {
+    /* Add your header styles here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* 100% of the viewport height */
+    text-align: center; /* Center text within the container */
+
+  }
+
+  .min-max {
+    /* Add your list item styles here */
+    /* These styles are specific to each list item */
+    list-style: none; /* Remove default bullet points */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    text-align: center;
+  }
+  .guess-number {
+    list-style: none; /* Remove default bullet points */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    text-align: center;
+  }

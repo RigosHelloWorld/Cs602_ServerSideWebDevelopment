@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import BabyNames from './components/screens/baby-names';
+import NumberGuessing from './components/screens/number-guessing';
 
 function App() {
   return (
     <>
-    <BabyNames></BabyNames>
+    <NumberGuessing></NumberGuessing>
     </>
   );
 }
